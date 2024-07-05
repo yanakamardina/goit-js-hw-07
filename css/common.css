@@ -41,6 +41,14 @@ a {
 button {
   cursor: pointer;
   border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  height: 40px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.04em;
+  color: #fff;
 }
 
 img {
@@ -157,17 +165,8 @@ input#name-input h1 {
 
 .login-form button {
   margin-top: 8px;
-  border-radius: 8px;
-  border: none;
-  padding: 8px 16px;
   width: 86px;
-  height: 40px;
   background: #4e75ff;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 150%;
-  letter-spacing: 0.04em;
-  color: #fff;
 }
 
 .widget {
@@ -186,14 +185,57 @@ div.widget p {
 }
 
 .change-color {
+  width: 148px;
+  background: #4e75ff;
+}
+
+#controls {
+  border-radius: 8px;
+  padding: 32px;
+  width: 486px;
+  height: 104px;
+  background: #f6f6fe;
+  margin-bottom: 16px;
+}
+
+#controls input {
+  border: 1px solid #808080;
   border-radius: 8px;
   padding: 8px 16px;
-  width: 148px;
+  width: 150px;
   height: 40px;
-  background: #4e75ff;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 16px;
   line-height: 150%;
   letter-spacing: 0.04em;
-  color: #fff;
+}
+
+#controls input::-webkit-outer-spin-button,
+#controls input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+#boxes {
+  border-radius: 8px;
+  padding: 32px;
+  width: 486px;
+  min-height: 134px;
+  background: #f6f6fe;
+}
+
+button[data-create] {
+  width: 120px;
+  background: #4e75ff;
+
+}
+
+button[data-destroy] {
+  width: 120px;
+  background: #ff4e4e;
+}
+
+#boxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
 }
