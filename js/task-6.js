@@ -14,21 +14,30 @@ function destroyBoxes() {
   divBoxes.innerHTML = '';
 }
 
+// Єдине, бачу, що цей варіант (зі збором єлементів у масив) навпаки довше оброблюється:
+// - 10 000 елементів:
+// one by one: 27ms
+// all together: 31ms;
+// - 100 000 елементів:
+// one by one: 191ms
+// all together: 271ms.
+
 function createBoxes(amount) {
   if (amount >= 1 && amount <= 100) {
     destroyBoxes();
     input.value = '';
+    const divItems = [];
     for (let i = 0; i < amount; i++) {
       let boxSize = `${30 + (i * 10)}px`
       const newDiv = document.createElement("div");
       newDiv.style.width = boxSize;
       newDiv.style.height = boxSize;
       newDiv.style.background = getRandomHexColor();
-      divBoxes.appendChild(newDiv);
+      divItems.push(newDiv);
     }
+    divBoxes.append(...divItems);
   }
 }
-
 
 btnCreate.addEventListener("click", () => createBoxes(Number(input.value)));
 btnDestroy.addEventListener("click", destroyBoxes);
