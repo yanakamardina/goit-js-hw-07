@@ -14,13 +14,6 @@ function destroyBoxes() {
   divBoxes.innerHTML = '';
 }
 
-// Єдине, бачу, що цей варіант (зі збором єлементів у масив) навпаки довше оброблюється:
-// - 10 000 елементів:
-// one by one: 27ms
-// all together: 31ms;
-// - 100 000 елементів:
-// one by one: 191ms
-// all together: 271ms.
 
 function createBoxes(amount) {
   if (amount >= 1 && amount <= 100) {
